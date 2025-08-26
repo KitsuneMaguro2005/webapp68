@@ -1,0 +1,106 @@
+div{
+    width: 500px;
+    height: 1500px;
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+}
+.image-container {
+    position: relative; /* กำหนดคอนเทนเนอร์หลัก */
+    display: inline-block; /* ให้คอนเทนเนอร์ปรับขนาดตามเนื้อหา */
+  }
+
+  .image-container img {
+    position: absolute; /* กำหนดให้รูปภาพซ้อนทับกัน */
+    top: 0;
+    left: 0;
+    width: 50%; /* ปรับขนาดรูปภาพให้พอดี */
+    height: auto;
+    z-index: 1; /* กำหนดลำดับการซ้อนทับ */
+  }
+
+  .overlay-text {
+    position: absolute; /* จัดตำแหน่งข้อความ */
+      top: 30%; /* อยู่กึ่งกลางแนวตั้ง */
+      left: 25%; /* อยู่กึ่งกลางแนวนอน */
+      transform: translate(-50%, -50%); /* ปรับตำแหน่งให้ตรงกลางพอดี */
+      color: white; /* สีข้อความ */
+      background-color: rgba(0, 0, 0, 0.5); /* สีพื้นหลังพร้อมความโปร่งใส */
+      padding: auto; /* ระยะห่างภายในข้อความ */
+      margin: auto;
+      font-size: 10px; /* ขนาดตัวอักษร */
+      z-index: 1; /* ให้ข้อความอยู่ด้านบนสุด */
+      text-align: center;
+      width: 240px;
+      height: 40px;
+  }
+  .scroll-container {
+    background-color: skyblue;
+      
+      width: 30%; /* Or a fixed width */
+      height: 300px; /* Or a fixed height */
+      overflow-x: scroll; /* For vertical scrolling, use overflow-x for horizontal */
+      scroll-snap-type: x mandatory; /* 'y' for vertical, 'x' for horizontal; 'mandatory' ensures snapping */
+    }
+    .scroll-item {
+      height: 5%; /* Or a fixed height for each item */
+      display: flex; /* For centering content within items */
+      align-items: left;
+      justify-content: left;
+      font-size: 20px;
+      scroll-snap-align: start; /* 'start', 'center', or 'end' */
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    #fullscreen-box {
+      width: 100%;
+      max-width: 600px;
+      height: 200px;
+      background-color: orange;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 20px;
+      transition: all 0.5s ease;
+    }
+
+    /* Style when in fullscreen */
+    #fullscreen-box:fullscreen {
+      background-color: #0066cc;
+      color: white;
+      font-size: 24px;
+      height: 100%;
+      border-radius: 0;
+    }
+
+    button {
+      display: block;
+      margin: auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .instructions {
+      text-align: center;
+      font-style: italic;
+      color: #333;
+    }
+    .item {
+    width: 100px;
+    height: 70px;
+    float: left;
+    margin: 10px;
+    text-align: center;
+    align-content: center;
+    background-color: bisque;
+    transition: 0.5s;
+}
+
+.item:hover {
+    opacity: 0;
+    transition: 0.5s;
+}
